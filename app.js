@@ -19,13 +19,13 @@ const getReconStatus = async () => {
          trustServerCertificate: true,
          cryptoCredentialsDetails: { minVersion: 'TLSv1' }
       }
-   });
+   })
 
    const { recordset } = await sql.query(
       `select * from dbo.ReconStatus
        where ReconDate >= '2021-12-15' 
        order by NeilsonNetCode, ReconDate;`
-   );
+   )
 
    return recordset
 }
